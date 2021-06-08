@@ -256,12 +256,18 @@ class Screen4 extends React.Component{
 		})
 		.then(res => {
 			if (res.ok) return res.json();
+			else if(res.status === 409){
+				this.state.msg = "Oops, the session is full. Trying again...";
+				this.interval = setInterval(()=>this.load(), 10000);
+			}
             throw res;
 		})
 		.then(data => {
 			console.log(data)
-			this.state.msg = "Your slot has been successfully booked"+data["txn_id"];
-			console.log(data[""]);
+			var audio = new Audio('https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3');
+			audio.play();
+			this.state.msg = "Your slot has been successfully booked"+data["appointment_confirmation_no"];
+			console.log(data["appointment_confirmation_no"]);
 		})
 		.catch(error => error.text().then(errormsg => Promise.reject("[" + error.status + ":" +
             error.statusText + "] while fetching " + error.url + ", response is [" + errormsg+"]"))
@@ -274,7 +280,7 @@ class Screen4 extends React.Component{
 		    <div class="wrap-contact100">
 			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Book my slot
+					Automate your covid vaccine slot selection
 				</span>
 				<span class="label-input100"><b>Vaccination Centre:</b>  {this.state.center}</span> <br></br>
 				<span class="label-input100"><b>Date:</b>  {this.state.date}</span><br></br>

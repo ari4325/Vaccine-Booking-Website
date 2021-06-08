@@ -129,7 +129,7 @@ class Screen3 extends React.Component {
                 <div class="wrap-contact100">
                     <form class="contact100-form validate-form">
                         <span class="contact100-form-title">
-                            Automate your Covid vaccine search
+                            Automate your covid vaccine slot selection
                         </span>
             
                         <div class="wrap-input100 input100-select">
