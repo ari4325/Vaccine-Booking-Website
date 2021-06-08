@@ -50,11 +50,13 @@ class Screen2 extends React.Component{
 
     render(){
         return(
+            <div>
+
             <div class="container-contact100">
                 <div class="wrap-contact100">
                     <form class="contact100-form validate-form">
                         <span class="contact100-form-title">
-                            Automate your covid vaccine slot selection
+                            Automatic Vaccine Booking
                         </span>
 
                         <div class="wrap-input100">
@@ -67,6 +69,12 @@ class Screen2 extends React.Component{
                     </form>
                 </div>
 	        </div>
+
+            <div style={{position: "static", left: "0", bottom: "0", width: "100%", backgroundColor: "black", textAlign: "center", paddingTop: "1%", paddingBottom: "1%", marginTop: "-3.5%"}}>
+            <p style={{color: "#fff"}}><b>Made with &#10084;&#65039; by Arishmit Ghosh and Sushmit Ghosh</b></p>
+            </div>
+
+            </div>
         )
     }
 }

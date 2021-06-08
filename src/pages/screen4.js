@@ -276,11 +276,12 @@ class Screen4 extends React.Component{
 
     render(){
         return (
+			<div>
             <div class="container-contact100">
 		    <div class="wrap-contact100">
 			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Automate your covid vaccine slot selection
+					Automatic Vaccine Booking
 				</span>
 				<span class="label-input100"><b>Vaccination Centre:</b>  {this.state.center}</span> <br></br>
 				<span class="label-input100"><b>Date:</b>  {this.state.date}</span><br></br>
@@ -291,6 +292,11 @@ class Screen4 extends React.Component{
                 
 			</form>
 		</div>
+	</div>
+
+	<div style={{position: "static", left: "0", bottom: "0", width: "100%", backgroundColor: "black", textAlign: "center", paddingTop: "1%", paddingBottom: "1%", marginTop: "-3.5%"}}>
+            <p style={{color: "#fff"}}><b>Made with &#10084;&#65039; by Arishmit Ghosh and Sushmit Ghosh</b></p>
+            </div>
 	</div>
 
         )
